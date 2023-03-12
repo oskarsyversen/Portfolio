@@ -21,6 +21,11 @@ nav {
     align-items: center;
 }
 
+nav a {
+    text-decoration: none;
+    color: black;
+}
+
 .logo {
     font-size: 1.3rem;
     padding-right: 20px;
@@ -611,7 +616,7 @@ header {
 .submitBtn {
     text-align: center;
     margin-top: 20px;
-    width: 45px;
+    padding: 0;
     font-size: 1rem;
     background-color: #f0efef;
     border: none;
