@@ -1,0 +1,660 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --primary: #222;
+    --secondary: rgb(228, 228, 228);
+    --blue1: rgb(19, 51, 73);
+    --blue2: rgb(57, 146, 194);
+    --blue3: rgb(45, 173, 180);
+}
+
+nav {
+    width: 100%;                                                                         /*navbar*/
+    height: 8vh;
+    background-color: transparent;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+}
+
+.logo {
+    font-size: 1.3rem;
+    padding-right: 20px;
+    border-right: 1px solid black;
+    cursor: default;
+}
+
+.logo:hover {
+    border-bottom: 0px solid transparent;
+}
+
+nav p {
+    margin: 15px;
+    cursor: pointer;
+    border-bottom: 1px solid transparent;
+}
+
+nav p:hover {
+    border-bottom: 1px solid var(--primary);
+}
+
+.navRight {
+    margin-left: auto;
+}
+
+@media screen and (max-width: 1000px) {
+    .logo {
+        font-size: 0.9rem;
+        padding-right: 10px;
+    }
+
+    nav p {
+        font-size: 0.9rem;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .logo {
+        font-size: 0.8rem;
+        width: 100px;
+        padding-right: 10px;
+    }
+
+    nav p {
+        font-size: 0.8rem;
+        margin: 10px 12px 10px 10px;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .logo {
+        font-size: 0.6rem;
+        width: 50px;
+        padding-right: 10px;
+    }
+
+    nav p {
+        font-size: 0.6rem;
+    }
+}
+
+.wrapper {
+    height: 100vh;                                                                 /*wrapper and header*/
+    overflow-y: auto;
+    overflow-x: hidden;
+    perspective: 2px;
+}
+
+header {
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100%;
+    transform-style: preserve-3d;
+    z-index: -1;
+}
+
+.welcomeText {
+    font-size: 7rem;
+    color: white;
+    text-shadow: 0 0 5px black;
+    transform: translateZ(-2px) scale(1.5);
+}
+
+@media screen and (min-width: 1700px) {
+    .welcomeText {
+        font-size: 7vw;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    header {
+        justify-content: center;
+    }
+
+    .welcomeText {
+        font-size: 6rem;
+        margin-top: -70px;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .welcomeText {
+        font-size: 5.5rem;
+        margin-top: -100px;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    header {
+        justify-content: center;
+    }
+
+    .welcomeText {
+        font-size: 4rem;
+    }
+}
+
+.background {
+    margin-top: 50px;                                                              /*background image*/
+    border-radius: 100px 50px;
+    position: absolute;
+    height: 600px;
+    width: 90%;
+    object-fit: cover;
+    z-index: -1;
+    transform: translateZ(-3px) scale(1.9);
+    filter: brightness(80%);
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, 
+    rgba(0, 0, 0, 0.12) 0px 4px 6px, 
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, 
+    rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+@media screen and (min-width: 1700px) {
+    .background {
+        width: 100%;
+        height: 800px;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .background {
+        width: 100%;
+        margin-top: -100px;
+    }
+}
+
+.down {
+    width: 100%;                                                                     /*from image down*/
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+}
+
+
+.bubble1 {
+    border-radius: 20px 0 0 20px;                                                     /* first text */
+    border: 2px solid transparent;
+    border-right: none;
+    width: 48%;
+    height: auto;
+    margin-left: auto;
+    font-size: 1.6rem;
+    padding: 2rem;
+    background-color: white;
+    color: black;
+    border-bottom: 2px solid var(--primary);
+    border-left: 0px solid white;
+}
+
+.bubble2 {
+    margin-top: 80px;                                                                  /* second text */
+    width: 40%;
+    height: auto;
+    font-size: 1.6rem;
+    padding: 2rem;
+    border-radius: 0 20px 20px 0;
+    z-index: 1;
+    border-bottom: 2px solid var(--primary);
+    border-left: 0px solid white;
+    background-color: white;
+    color: black;
+}
+
+@media screen and (min-width: 1700px) {
+    .bubble1 {
+        font-size: 1.7rem;
+    }
+
+    .bubble2 {
+        font-size: 1.7rem;
+        width: 48%;
+    }
+}
+
+
+@media screen and (max-width: 1000px) {
+    .bubble1 {
+        font-size: 1.4rem;
+    }
+
+    .bubble2 {
+        font-size: 1.4rem;
+        width: 48%;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .bubble1 {
+        font-size: 1rem;
+    }
+
+    .bubble2 {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .bubble1 {
+        font-size: 0.7rem;
+    }
+
+    .bubble2 {
+        font-size: 0.7rem;
+    }
+}
+
+.afterBubbles {
+    margin-top: 200px;    
+    margin-bottom: -50px;                                                        /*after text bubbles*/
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.aboutMe {
+    margin: 0 0 30px 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 26%;
+}
+
+.aboutMe p {
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.aboutHeader {
+    font-size: 3rem;
+    margin-bottom: -3px;
+}
+
+.aboutField {
+    margin: 80px 50px 30px 0px;
+    height: 350px;
+    width: 48%;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.aboutText {
+    margin-top: 30px;
+    width: 70%;
+    font-size: 1.6rem;
+}
+
+@media screen and (max-width: 1000px) {
+    .afterBubbles {
+        flex-direction: column;
+    }
+
+    .aboutMe {
+        margin: 20px 0 0 0;
+        width: 40%;
+        align-items: center;
+        border-top: 2px solid #222;
+        border-right: 2px solid transparent;
+        border-left: 2px solid transparent;
+        border-radius: 25px;
+        padding-top: 20px;
+    }
+
+    .aboutMe p {
+        margin-right: auto;
+    }
+
+    .aboutField {
+        margin: 0;
+        text-align: center;
+        width: 80%;
+    }
+
+    .aboutHeader {
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
+
+    .aboutText {
+        margin-top: 50px;
+        font-size: 1.3rem;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .aboutMe {
+        margin: 80px 0 0 0;
+        width: 60%;
+        align-items: center;
+    }
+
+    .aboutMe p {
+        margin-right: auto;
+        font-size: 1rem;
+    }
+
+    .aboutField {
+        margin: 30px 0 0 0px;
+        text-align: center;
+        width: 100%;
+    }
+
+    .aboutHeader {
+        font-size: 1.8rem;
+        margin-bottom: 10px;
+    }
+
+    .aboutText {
+        font-size: 1.2rem;
+        margin-top: 10px;
+    }
+}
+
+@media screen and (max-width: 350px){
+    .aboutText {
+        font-size: 1rem;
+    }
+}
+
+
+.productive {
+    border-radius: 3px;                                                               /*personal values*/
+    width: 100%;
+    height: 20px;
+    border: 1px solid var(--primary);
+    background-color: var(--secondary);
+    overflow: hidden;
+}
+
+.bar1 {
+    height: 100%;
+    width: 96%;
+    margin-left: -5px;
+    z-index: -1;
+    transform: skewx(-30deg);
+    background-color: var(--blue1);
+}
+
+.motivated {
+    border-radius: 3px;
+    width: 100%;
+    height: 20px;
+    border: 1px solid var(--primary);
+    background-color: var(--secondary);
+}
+
+.bar2 {
+    height: 100%;
+    width: 100%;
+    background-color: var(--blue2);
+}
+
+.solutionOriented {
+    border-radius: 3px;
+    width: 100%;
+    height: 20px;
+    border: 1px solid var(--primary);
+    background-color: var(--secondary);
+    overflow: hidden;
+}
+
+.bar3 {
+    height: 100%;
+    width: 93%;
+    margin-left: -5px;
+    z-index: -1;
+    transform: skewX(-30deg);
+    background-color: var(--blue3);
+}
+
+.contactField {
+    padding-top: 100px;
+    margin-top: 50px;
+    width: 100%;
+    height: 70vh;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.borderContact {
+    width: 75%;
+    height: auto;
+    background: #f0efef;
+    box-shadow: 
+    60px 40px 70px #f4f4f4,
+    -60px -40px 70px #dfdfdf;
+    color: black;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.socialMedia{
+    margin-left: 60px;
+    width: 40%;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.socialMedia p {
+    font-weight: 500;
+    margin-left: 30px;
+}
+
+.contactHeader {
+    font-size: 3rem;
+    margin-top: -10px;
+    margin-bottom: 20px;
+}
+
+.socials a {
+    text-decoration: none;
+    color: #222;
+}
+
+@media screen and (min-width: 1700px){
+    .borderContact {
+        padding: 50px;
+    }
+}
+
+@media screen and (max-width: 1000px){
+    .contactField {
+        padding-top: 50px;
+        margin-top: 100px;
+    }
+    .borderContact {
+        flex-direction: column;
+        align-items: center;
+        box-shadow: 
+        40px 20px 60px #f4f4f4,
+        -40px -20px 60px #dfdfdf;
+    }
+
+    .socialMedia {
+        width: 100%;
+        height: 150px;
+        align-items: center;
+        margin-top: 20px;
+        margin-left: 0;
+    }
+
+    .socials {
+        display: flex;
+        flex-direction: row;
+        font-weight: 500;
+    }
+
+    .socialMedia p {
+        margin-left: 0;
+        margin: 10px;
+    }
+
+    .contactHeader {
+        font-size: 2.6rem;
+    }
+}
+
+@media screen and (max-width: 550px){
+    .contactHeader {
+        font-size: 1.8rem;
+    }
+    .socialMedia p {
+        font-size: 0.9rem;
+        margin: 8px;
+    }
+}
+
+@media screen and (max-width: 350px){
+    .contactHeader {
+        font-size: 1.6rem;
+    }
+    .socialMedia p {
+        font-size: 0.8rem;
+        margin: 6px;
+    }
+}
+
+.thanks {
+    width: 60%;
+    height: 250px;
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.thanks p {
+    margin-top: -6px;
+}
+
+@media screen and (max-width: 1000px) {
+    .thanks {
+        margin-top: 20px;
+        height: 150px;
+        justify-content: flex-start;
+        width: 80%;
+    }
+    .thanks h2 {
+        font-size: 1.4rem;
+    }
+    .thanks p {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .thanks h2 {
+        font-size: 1rem;
+    }
+    .thanks p {
+        font-size: 0.75rem;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .thanks h2 {
+        font-size: 0.8rem;
+    }
+    .thanks p {
+        font-size: 0.6rem;
+    }
+}
+
+
+.contactForm {
+    width: 60%;
+    height: 250px;
+    margin-top: 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.inputText {
+    margin-top: 20px;
+    width: 70%;
+    height: 1.8rem;
+    font-size: 1.2rem;
+    background-color: #f0efef;
+    border: none;
+    border-bottom: 2px solid var(--blue1); 
+}
+
+.buttonField {
+    width: 70%;
+    display: flex;
+    padding: 0;
+    justify-content: flex-end;
+}
+
+.submitBtn {
+    text-align: center;
+    margin-top: 20px;
+    padding: 0;
+    font-size: 1rem;
+    background-color: #f0efef;
+    border: none;
+    cursor: pointer;
+    color: #222;
+}
+
+@media screen and (max-width: 1000px){
+    .contactForm{
+        margin-top: -10px;
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 550px){
+    .contactForm{
+        width: 100%;
+    }
+    .contactForm input {
+        font-size: 1rem;
+    }
+    .submitBtn {
+        font-size: 0.9rem;
+    }
+}
+
+.footer {
+    margin-top: 20px;
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media screen and (max-width: 550px){
+    .footer{
+        margin-top: 0;
+    }
+}
