@@ -638,8 +638,9 @@ header {
     .contactForm input {
         font-size: 1rem;
     }
-    .sendButton {
+    .submitBtn {
         font-size: 0.9rem;
+        margin-right: -5px;
     }
 }
 
